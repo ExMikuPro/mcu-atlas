@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "types": ["node", "@cloudflare/vitest-plugin/types"],
+    "noEmit": true
+  },
+  "include": ["src", "schemas", "collector", "scripts", "tests", "*.config.ts", "worker-configuration.d.ts"]
+}

@@ -1,0 +1,72 @@
+name: Refresh CMSIS data
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 3 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: mcu-atlas-cmsis-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Collect from approved official sources
+        shell: bash
+        run: |
+          pnpm --silent collect | tee "$RUNNER_TEMP/refresh.json"
+          {
+            echo '## CMSIS refresh'
+            echo '```json'
+            cat "$RUNNER_TEMP/refresh.json"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - run: pnpm test
+      - run: pnpm build
+      - name: Open an update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          snapshot=data/seeds/cmsis-snapshot.json
+          if git diff --quiet -- "$snapshot"; then
+            echo "The accepted source snapshot is current."
+            exit 0
+          fi
+          digest=$(node -e 'const fs = require("node:fs"); const crypto = require("node:crypto"); const data = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); console.log(crypto.createHash("sha256").update(JSON.stringify(data.cmsis.packs)).digest("hex").slice(0, 16));' "$snapshot")
+          branch="automation/cmsis-$digest"
+          if [[ -n "$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number // empty')" ]]; then
+            echo "A matching update pull request already exists."
+            exit 0
+          fi
+          if [[ -z "$(git ls-remote --heads origin "refs/heads/$branch")" ]]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- "$snapshot"
+            git commit -m "Refresh official CMSIS-Pack data"
+            git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin "HEAD:refs/heads/$branch"
+          fi
+          {
+            echo "The collector rebuilt and validated all JSON assets. ST evidence was retained from the reviewed snapshot."
+            echo
+            echo '```json'
+            cat "$RUNNER_TEMP/refresh.json"
+            echo '```'
+          } > "$RUNNER_TEMP/refresh-pr.md"
+          gh pr create --base main --head "$branch" --title 'Refresh official CMSIS-Pack data' --body-file "$RUNNER_TEMP/refresh-pr.md"

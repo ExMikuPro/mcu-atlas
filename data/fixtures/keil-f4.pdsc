@@ -1,0 +1,28 @@
+<package schemaVersion="1.7.36">
+  <vendor>Keil</vendor>
+  <name>STM32F4xx_DFP</name>
+  <releases>
+    <release version="3.1.1" date="2025-08-18" tag="v3.1.1">
+      Package Description (pdsc):
+      - Updated debug configuration files
+      - Shortened device family description
+      - Added Ddsp processor attribute
+    </release>
+  </releases>
+  <devices>
+    <family Dfamily="STM32F4 Series" Dvendor="STMicroelectronics:13">
+      <book name="https://www.st.com/resource/en/user_manual/um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf" title="STM32F4xx HAL Drivers" />
+      <book name="https://developer.arm.com/documentation/dui0553/latest" title="Cortex-M4 Generic User Guide" />
+      <subFamily DsubFamily="STM32F407">
+        <book name="https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32F405/415 STM32F407/417 STM32F427/437 STM32F429/439 Reference Manual" />
+        <book name="https://www.st.com/resource/en/datasheet/stm32f405rg.pdf" title="STM32F405/407 Datasheet" />
+        <device Dname="STM32F407VG">
+          <variant Dvariant="STM32F407VGTx"> </variant>
+        </device>
+        <device Dname="STM32F407VE">
+          <variant Dvariant="STM32F407VETx"> </variant>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+</package>

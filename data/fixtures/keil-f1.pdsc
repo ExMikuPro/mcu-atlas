@@ -1,0 +1,21 @@
+<package schemaVersion="1.7.2">
+  <vendor>Keil</vendor>
+  <name>STM32F1xx_DFP</name>
+  <releases>
+    <release version="2.4.1" date="2023-05-12">
+      Board Support:
+      - Corrected GLCD_MCBSTM32*.c
+    </release>
+  </releases>
+  <devices>
+    <family Dfamily="STM32F1 Series" Dvendor="STMicroelectronics:13">
+      <book name="Documents/dui0552a_cortex_m3_dgug.pdf" title="Cortex-M3 Generic User Guide" />
+      <subFamily DsubFamily="STM32F103">
+        <book name="Documents/CD00171190.pdf" title="STM32F101xx, STM32F102xx, STM32F103xx, STM32F105xx, STM32F107xx Reference Manual" />
+        <device Dname="STM32F103C8">
+          <book name="Documents/CD00161566.pdf" title="STM32F103x8 STM32F103xB Data Sheet" />
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+</package>

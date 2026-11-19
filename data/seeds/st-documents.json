@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-11-19T08:58:25Z",
+  "documents": [
+    {
+      "id": "DS5319",
+      "title": "STM32F103x8 and STM32F103xB datasheet",
+      "type": "datasheet",
+      "revision": "20",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
+      "sourceUrl": "https://www.st.com/en/microcontrollers-microprocessors/stm32f103/documentation.html",
+      "scope": "subFamily",
+      "appliesTo": [
+        "STM32F103C8"
+      ]
+    },
+    {
+      "id": "DS8626",
+      "title": "STM32F405xx and STM32F407xx datasheet",
+      "type": "datasheet",
+      "revision": "12",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f405zg.pdf",
+      "sourceUrl": "https://www.st.com/en/microcontrollers-microprocessors/stm32f407-417/documentation.html",
+      "scope": "subFamily",
+      "appliesTo": [
+        "STM32F407VE",
+        "STM32F407VG"
+      ]
+    },
+    {
+      "id": "ES0182",
+      "title": "STM32F405/407xx and STM32F415/417xx device errata",
+      "type": "errata",
+      "revision": "19",
+      "url": "https://www.st.com/resource/en/errata_sheet/es0182-stm32f405407xx-and-stm32f415417xx-device-errata-stmicroelectronics.pdf",
+      "sourceUrl": "https://www.st.com/en/microcontrollers-microprocessors/stm32f407-417/documentation.html",
+      "scope": "subFamily",
+      "appliesTo": [
+        "STM32F407VE",
+        "STM32F407VG"
+      ]
+    },
+    {
+      "id": "ES096",
+      "title": "STM32F101x8/B, STM32F102x8/B and STM32F103x8/B device errata",
+      "type": "errata",
+      "revision": "15",
+      "url": "https://www.st.com/resource/en/errata_sheet/es096-stm32f101x8b-stm32f102x8b-and-stm32f103x8b-mediumdensity-device-limitations-stmicroelectronics.pdf",
+      "sourceUrl": "https://www.st.com/en/microcontrollers-microprocessors/stm32f103/documentation.html",
+      "scope": "subFamily",
+      "appliesTo": [
+        "STM32F103C8"
+      ]
+    },
+    {
+      "id": "RM0008",
+      "title": "STM32F101xx, STM32F102xx, STM32F103xx, STM32F105xx and STM32F107xx reference manual",
+      "type": "reference_manual",
+      "revision": "21",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0008-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "sourceUrl": "https://www.st.com/en/microcontrollers-microprocessors/stm32f103/documentation.html",
+      "scope": "subFamily",
+      "appliesTo": [
+        "STM32F103C8"
+      ]
+    },
+    {
+      "id": "RM0090",
+      "title": "STM32F405/415, STM32F407/417, STM32F427/437 and STM32F429/439 reference manual",
+      "type": "reference_manual",
+      "revision": "22",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "sourceUrl": "https://www.st.com/en/microcontrollers-microprocessors/stm32f407-417/documentation.html",
+      "scope": "subFamily",
+      "appliesTo": [
+        "STM32F407VE",
+        "STM32F407VG"
+      ]
+    }
+  ]
+}

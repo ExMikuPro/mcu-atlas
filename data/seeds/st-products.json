@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-11-19T09:02:10.153Z",
+  "products": [
+    {
+      "device": "STM32F103C8",
+      "sourceUrl": "https://estore.st.com/en/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-mainstream-mcus/stm32f1-series/stm32f103/stm32f103c8.html",
+      "models": [
+        "STM32F103C8T6"
+      ],
+      "datasheetUrl": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf"
+    },
+    {
+      "device": "STM32F407VE",
+      "sourceUrl": "https://estore.st.com/en/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-high-performance-mcus/stm32f4-series/stm32f407-417/stm32f407ve.html",
+      "models": [
+        "STM32F407VET6",
+        "STM32F407VET6TR"
+      ],
+      "datasheetUrl": "https://www.st.com/resource/en/datasheet/stm32f405zg.pdf"
+    },
+    {
+      "device": "STM32F407VG",
+      "sourceUrl": "https://estore.st.com/en/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-high-performance-mcus/stm32f4-series/stm32f407-417/stm32f407vg.html",
+      "models": [
+        "STM32F407VGT6"
+      ],
+      "datasheetUrl": "https://www.st.com/resource/en/datasheet/stm32f405zg.pdf"
+    }
+  ]
+}

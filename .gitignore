@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+generated-assets/
+dist/
+coverage/
+.env*
+.dev.vars*
+.DS_Store
+data/seeds/*.tmp
+
+/worker-configuration.d.ts

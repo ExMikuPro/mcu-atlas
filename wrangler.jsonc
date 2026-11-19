@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "mcu-atlas-v01-preview",
+  "main": "./src/index.ts",
+  "compatibility_date": "2026-08-20",
+  "assets": {
+    "directory": "./generated-assets",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+}

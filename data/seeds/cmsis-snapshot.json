@@ -1,0 +1,152 @@
+{
+  "cmsis": {
+    "observedAt": "2026-11-19T09:03:36.369Z",
+    "packs": [
+      {
+        "name": "STM32F1xx_DFP",
+        "version": "2.4.1",
+        "url": "https://www.keil.com/pack/Keil.STM32F1xx_DFP.pdsc",
+        "devices": [
+          {
+            "model": "STM32F103C8",
+            "family": "STM32F1 Series",
+            "vendor": "STMicroelectronics:13",
+            "books": [
+              {
+                "name": "Documents/CD00161566.pdf",
+                "title": "STM32F103x8 STM32F103xB Data Sheet",
+                "scope": "device"
+              },
+              {
+                "name": "Documents/CD00171190.pdf",
+                "title": "STM32F101xx, STM32F102xx, STM32F103xx, STM32F105xx, STM32F107xx Reference Manual",
+                "scope": "subFamily"
+              },
+              {
+                "name": "Documents/dui0552a_cortex_m3_dgug.pdf",
+                "title": "Cortex-M3 Generic User Guide",
+                "scope": "family"
+              }
+            ],
+            "variants": []
+          }
+        ]
+      },
+      {
+        "name": "STM32F4xx_DFP",
+        "version": "3.1.1",
+        "url": "https://www.keil.com/pack/Keil.STM32F4xx_DFP.pdsc",
+        "devices": [
+          {
+            "model": "STM32F407VE",
+            "family": "STM32F4 Series",
+            "vendor": "STMicroelectronics:13",
+            "books": [
+              {
+                "name": "https://developer.arm.com/documentation/dui0553/latest",
+                "title": "Cortex-M4 Generic User Guide",
+                "scope": "family"
+              },
+              {
+                "name": "https://www.st.com/resource/en/datasheet/stm32f405rg.pdf",
+                "title": "STM32F405/407 Datasheet",
+                "scope": "subFamily"
+              },
+              {
+                "name": "https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+                "title": "STM32F405/415 STM32F407/417 STM32F427/437 STM32F429/439 Reference Manual",
+                "scope": "subFamily"
+              },
+              {
+                "name": "https://www.st.com/resource/en/user_manual/um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf",
+                "title": "STM32F4xx HAL Drivers",
+                "scope": "family"
+              }
+            ],
+            "variants": [
+              {
+                "model": "STM32F407VETx",
+                "books": [
+                  {
+                    "name": "https://developer.arm.com/documentation/dui0553/latest",
+                    "title": "Cortex-M4 Generic User Guide",
+                    "scope": "family"
+                  },
+                  {
+                    "name": "https://www.st.com/resource/en/datasheet/stm32f405rg.pdf",
+                    "title": "STM32F405/407 Datasheet",
+                    "scope": "subFamily"
+                  },
+                  {
+                    "name": "https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+                    "title": "STM32F405/415 STM32F407/417 STM32F427/437 STM32F429/439 Reference Manual",
+                    "scope": "subFamily"
+                  },
+                  {
+                    "name": "https://www.st.com/resource/en/user_manual/um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf",
+                    "title": "STM32F4xx HAL Drivers",
+                    "scope": "family"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "model": "STM32F407VG",
+            "family": "STM32F4 Series",
+            "vendor": "STMicroelectronics:13",
+            "books": [
+              {
+                "name": "https://developer.arm.com/documentation/dui0553/latest",
+                "title": "Cortex-M4 Generic User Guide",
+                "scope": "family"
+              },
+              {
+                "name": "https://www.st.com/resource/en/datasheet/stm32f405rg.pdf",
+                "title": "STM32F405/407 Datasheet",
+                "scope": "subFamily"
+              },
+              {
+                "name": "https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+                "title": "STM32F405/415 STM32F407/417 STM32F427/437 STM32F429/439 Reference Manual",
+                "scope": "subFamily"
+              },
+              {
+                "name": "https://www.st.com/resource/en/user_manual/um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf",
+                "title": "STM32F4xx HAL Drivers",
+                "scope": "family"
+              }
+            ],
+            "variants": [
+              {
+                "model": "STM32F407VGTx",
+                "books": [
+                  {
+                    "name": "https://developer.arm.com/documentation/dui0553/latest",
+                    "title": "Cortex-M4 Generic User Guide",
+                    "scope": "family"
+                  },
+                  {
+                    "name": "https://www.st.com/resource/en/datasheet/stm32f405rg.pdf",
+                    "title": "STM32F405/407 Datasheet",
+                    "scope": "subFamily"
+                  },
+                  {
+                    "name": "https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+                    "title": "STM32F405/415 STM32F407/417 STM32F427/437 STM32F429/439 Reference Manual",
+                    "scope": "subFamily"
+                  },
+                  {
+                    "name": "https://www.st.com/resource/en/user_manual/um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf",
+                    "title": "STM32F4xx HAL Drivers",
+                    "scope": "family"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
