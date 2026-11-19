@@ -1,9 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { lookupAssetPath } from '../schemas/asset-key';
 import { modelQuery, publicUrl } from '../schemas/device';
 import { cmsisAdapter, createCmsisAdapter, packFromIndex, parsePdsc } from '../collector/adapters/cmsis';
 import { createStAdapter, parseStStore } from '../collector/adapters/st';
-import { normalizeCatalog } from '../collector/normalize';
+import { buildCatalog } from '../collector/catalog';
 import { cmsisIndexUrl, stScope } from '../collector/scope';
 import { renderAssets } from '../scripts/assets';
 import { readInputs } from '../scripts/inputs';
@@ -85,14 +86,14 @@ describe('ST Adapter', () => {
     expect(() => parseStStore(html + html, target)).toThrow('got 2');
     const data = await readInputs();
     data.st.products[1].datasheetUrl = 'https://www.st.com/resource/en/datasheet/unreviewed.pdf';
-    expect(() => normalizeCatalog(data)).toThrow('product and document evidence disagree');
+    expect(() => buildCatalog(data)).toThrow('product and document evidence disagree');
   });
 });
 
 describe('Normalized catalog and static rendering', () => {
   it('deduplicates documents across base devices without dropping scoped applicability', async () => {
     const input = await readInputs();
-    const catalog = normalizeCatalog(input);
+    const catalog = buildCatalog(input);
     expect(catalog.devices).toHaveLength(3);
     expect(catalog.orders).toHaveLength(4);
     expect(catalog.documents).toHaveLength(6);
@@ -101,7 +102,7 @@ describe('Normalized catalog and static rendering', () => {
     expect(catalog.applicability.filter((link) => link.documentKey === rm[0].key).map((link) => link.deviceId))
       .toEqual(['st:STM32F407VE', 'st:STM32F407VG']);
     expect(renderAssets(input)).toEqual(renderAssets(structuredClone(input)));
-    expect(renderAssets(input).get('v1/lookup/stm32f407vet6tr.json')).toContain('STM32F407VET6TR');
+    expect(renderAssets(input).get(`v1/${lookupAssetPath('STM32F407VET6TR')}`)).toContain('STM32F407VET6TR');
   });
 
   it('fails closed for applicability errors, conflicting part mappings and non-HTTPS URLs', async () => {

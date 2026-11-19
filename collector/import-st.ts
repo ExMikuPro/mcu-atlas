@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { parseStStore } from './adapters/st';
-import { normalizeCatalog } from './normalize';
+import { buildCatalog } from './catalog';
 import { stScope } from './scope';
 import { snapshotSchema, editorialEvidence, stEvidence } from './snapshot';
 import { snapshotPath, stDocumentsPath, stProductsPath } from '../scripts/inputs';
@@ -23,6 +23,6 @@ const [snapshot, input, products] = await Promise.all([
   ))),
 ]);
 const st = stEvidence.parse({ observedAt, products });
-normalizeCatalog({ ...snapshot, st, editorial: input });
+buildCatalog({ ...snapshot, st, editorial: input });
 await writeAtomic(stProductsPath, json(st));
 console.log(`Imported ${st.products.length} reviewed ST product listings.`);

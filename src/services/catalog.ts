@@ -1,3 +1,4 @@
+import { lookupAssetPath } from '../../schemas/asset-key';
 import type { z } from 'zod';
 import { lookupAsset, manifest, searchIndex } from '../../schemas/response';
 
@@ -14,7 +15,7 @@ export const readManifest = (assets: Bindings['ASSETS']) => read(assets, 'manife
 export async function lookup(assets: Bindings['ASSETS'], model: string) {
   const index = await readManifest(assets);
   if (!index.models.includes(model)) return null;
-  const record = await read(assets, `lookup/${model.toLowerCase()}.json`, lookupAsset);
+  const record = await read(assets, lookupAssetPath(model), lookupAsset);
   if (record.dataVersion !== index.dataVersion || record.response.model !== model) {
     throw new Error(`Lookup data disagrees with manifest for ${model}`);
   }

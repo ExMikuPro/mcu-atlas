@@ -1,7 +1,9 @@
 import { z } from 'zod';
 
-export const model = z.string().regex(/^[A-Z0-9][A-Z0-9._-]{0,63}$/);
-export const modelQuery = z.string().trim().regex(/^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$/)
+const safeSegments = (value: string) => value.split('/').every((segment) => segment && segment !== '.' && segment !== '..');
+
+export const model = z.string().regex(/^[A-Z0-9][A-Z0-9._/-]{0,63}$/).refine(safeSegments);
+export const modelQuery = z.string().trim().regex(/^[A-Za-z0-9][A-Za-z0-9._/-]{0,63}$/).refine(safeSegments)
   .transform((value) => value.toUpperCase());
 export const label = z.string().trim().min(1).max(300);
 export const slug = z.string().regex(/^[a-z0-9][a-z0-9-]*$/);

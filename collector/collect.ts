@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { cmsisAdapter } from './adapters/cmsis';
 import { sourceReader } from './fetch';
-import { normalizeCatalog } from './normalize';
+import { buildCatalog } from './catalog';
 import { snapshotSchema } from './snapshot';
 import { readStInputs, snapshotPath } from '../scripts/inputs';
 import { json, writeAtomic } from '../scripts/io';
@@ -16,7 +16,7 @@ const collected = await cmsisAdapter.collect(sourceReader(), new Date().toISOStr
 const changed = json(collected.packs) !== json(previous?.cmsis.packs);
 const cmsis = changed || !previous ? collected : previous.cmsis;
 const snapshot = snapshotSchema.parse({ cmsis });
-const catalog = normalizeCatalog({ ...snapshot, ...st });
+const catalog = buildCatalog({ ...snapshot, ...st });
 
 // Only replace the known-good snapshot after every source, relationship and schema is checked.
 if (changed || !previous) await writeAtomic(snapshotPath, json(snapshot));
