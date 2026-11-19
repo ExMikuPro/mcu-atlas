@@ -42,13 +42,14 @@ pnpm dev
 
 ```sh
 pnpm collect
+pnpm collect:microchip
 pnpm build:data
 pnpm validate:data
 ```
 
-`pnpm collect` retrieves the official Keil index and matching PDSC releases. It deduplicates requests, checks robots.txt and validates source consistency before atomically replacing the CMSIS snapshot. Identical source records produce a no-op. Use `pnpm import:st <capture-dir> <UTC-observed-at>` to replay manually supplied ST eStore captures. Review `data/seeds/st-documents.json` against the official document pages and PDF scope when a revision or applicability changes. The manual workflow is documented in [source notes](docs/sources.md).
+`pnpm collect` refreshes Keil CMSIS-Pack data. `pnpm collect:microchip` refreshes the Microchip Product Data API snapshot. Each collector validates evidence before replacing its source file. A failed or unchanged Microchip run preserves the accepted file and observation timestamp. The Microchip summary records changed ordering codes and document URL or edition changes visible to the API. Use `pnpm import:st <capture-dir> <UTC-observed-at>` to replay manually supplied ST eStore captures. See [source notes](docs/sources.md).
 
-The **Refresh CMSIS data** workflow runs Mondays at 03:23 UTC and supports manual dispatch from `main`. A changed snapshot can become a PR only after source validation, tests and the complete Worker build pass. Failed runs leave the last accepted revision in `main`. The workflow does not deploy. The repository's **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** setting is required to open update PRs with `GITHUB_TOKEN`. GitHub can require a maintainer to approve the PR's CI run. [GitHub workflow permissions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)
+The **Refresh official catalog data** workflow runs Mondays at 03:23 UTC and supports manual dispatch. The CMSIS and Microchip jobs validate independent snapshots and can each open a PR from a changed snapshot after type checking, tests, and a complete Worker build. The job publishes update PRs only from `main`. The branch rules require the GitHub Actions `checks` job before merge. A maintainer can approve CI for PRs opened by `GITHUB_TOKEN` when GitHub requests approval. [GitHub workflow permissions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)
 
 ## Static format
 
@@ -80,7 +81,7 @@ Errors use `{"success":false,"error":{"code":"MODEL_NOT_FOUND","message":"Model 
 
 ## Preview deployment and production migration
 
-The checked-in Worker is named `mcu-atlas-v01-preview` and uses no custom domain or production routes. Create a GitHub Actions environment named `preview` and add `CLOUDFLARE_ACCOUNT_ID` and an account-scoped `CLOUDFLARE_API_TOKEN` with Workers Scripts Edit permission to its environment secrets. Run **Deploy preview Worker** manually from `main`. If deploying locally, authenticate Wrangler, run `pnpm build`, then run `pnpm exec wrangler deploy` to create or update that preview Worker. Use a Cloudflare account and Worker name reserved for preview. [Cloudflare CI/CD guide](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)
+The checked-in Worker is named `mcu-atlas-v02-preview` and uses no custom domain or production routes. Create a GitHub Actions environment named `preview` and add `CLOUDFLARE_ACCOUNT_ID` and an account-scoped `CLOUDFLARE_API_TOKEN` with Workers Scripts Edit permission to its environment secrets. Run **Deploy v0.2 preview Worker** manually from `main` or the designated v0.2 integration branch. If deploying locally, authenticate Wrangler, run `pnpm build`, then run `pnpm exec wrangler deploy` to create or update that preview Worker. Use a Cloudflare account and Worker name reserved for preview. [Cloudflare CI/CD guide](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)
 
 Before moving `atlas-api.kaelexvp.cc`, compare the preview response contract with the existing API, smoke-test lookup, search and status, and verify the missing-model and static-asset failure paths. Record the current production version and routing, agree on a rollback target, and schedule the production deployment and route change as a separate, explicitly approved operation.
 

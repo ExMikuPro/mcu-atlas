@@ -1,6 +1,6 @@
 {
   "name": "mcu-atlas",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "license": "Apache-2.0",
@@ -10,6 +10,7 @@
   },
   "scripts": {
     "collect": "tsx collector/collect.ts",
+    "collect:microchip": "tsx collector/refresh-microchip-cli.ts",
     "build:data": "tsx scripts/build.ts",
     "validate:data": "tsx scripts/validate.ts",
     "dev": "pnpm build:data && wrangler dev",

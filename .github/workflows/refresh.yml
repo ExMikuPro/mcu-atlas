@@ -1,4 +1,4 @@
-name: Refresh CMSIS data
+name: Refresh official catalog data
 on:
   workflow_dispatch:
   schedule:
@@ -9,14 +9,27 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: mcu-atlas-cmsis-refresh
+  group: mcu-atlas-data-refresh
   cancel-in-progress: false
 
 jobs:
   refresh:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/v02/automated-refresh')
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - source: cmsis
+            script: collect
+            snapshot: data/seeds/cmsis-snapshot.json
+            title: Refresh official CMSIS-Pack data
+          - source: microchip
+            script: collect:microchip
+            snapshot: data/seeds/microchip-snapshot.json
+            title: Refresh official Microchip data
+    name: Refresh ${{ matrix.source }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -27,30 +40,36 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Collect from approved official sources
+      - name: Collect official data
+        env:
+          COLLECTOR: ${{ matrix.script }}
         shell: bash
         run: |
-          pnpm --silent collect | tee "$RUNNER_TEMP/refresh.json"
+          pnpm --silent "$COLLECTOR" | tee "$RUNNER_TEMP/refresh.json"
           {
-            echo '## CMSIS refresh'
+            echo '## Collection result'
             echo '```json'
             cat "$RUNNER_TEMP/refresh.json"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+      - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
       - name: Open an update pull request
+        if: success() && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
+          SOURCE: ${{ matrix.source }}
+          SNAPSHOT: ${{ matrix.snapshot }}
+          TITLE: ${{ matrix.title }}
         shell: bash
         run: |
-          snapshot=data/seeds/cmsis-snapshot.json
-          if git diff --quiet -- "$snapshot"; then
+          if git diff --quiet -- "$SNAPSHOT"; then
             echo "The accepted source snapshot is current."
             exit 0
           fi
-          digest=$(node -e 'const fs = require("node:fs"); const crypto = require("node:crypto"); const data = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); console.log(crypto.createHash("sha256").update(JSON.stringify(data.cmsis.packs)).digest("hex").slice(0, 16));' "$snapshot")
-          branch="automation/cmsis-$digest"
+          digest=$(node -e 'const fs = require("node:fs"); const crypto = require("node:crypto"); const data = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); console.log(crypto.createHash("sha256").update(JSON.stringify(data.cmsis?.packs ?? data.parts)).digest("hex").slice(0, 16));' "$SNAPSHOT")
+          branch="automation/$SOURCE-$digest"
           if [[ -n "$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number // empty')" ]]; then
             echo "A matching update pull request already exists."
             exit 0
@@ -58,15 +77,19 @@ jobs:
           if [[ -z "$(git ls-remote --heads origin "refs/heads/$branch")" ]]; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add -- "$snapshot"
-            git commit -m "Refresh official CMSIS-Pack data"
+            git add -- "$SNAPSHOT"
+            git commit -m "$TITLE"
             git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin "HEAD:refs/heads/$branch"
+          else
+            git fetch origin "refs/heads/$branch"
+            git show "FETCH_HEAD:$SNAPSHOT" > "$RUNNER_TEMP/existing-snapshot.json"
+            node -e 'const fs = require("node:fs"); const contents = (file) => { const data = JSON.parse(fs.readFileSync(file, "utf8")); return JSON.stringify(data.cmsis?.packs ?? data.parts); }; if (contents(process.argv[1]) !== contents(process.argv[2])) throw new Error("Existing branch has different source data");' "$SNAPSHOT" "$RUNNER_TEMP/existing-snapshot.json"
           fi
           {
-            echo "The collector rebuilt and validated all JSON assets. ST evidence was retained from the reviewed snapshot."
+            echo "Official source data passed full catalog validation, tests and the Worker dry run."
             echo
             echo '```json'
             cat "$RUNNER_TEMP/refresh.json"
             echo '```'
           } > "$RUNNER_TEMP/refresh-pr.md"
-          gh pr create --base main --head "$branch" --title 'Refresh official CMSIS-Pack data' --body-file "$RUNNER_TEMP/refresh-pr.md"
+          gh pr create --base main --head "$branch" --title "$TITLE" --body-file "$RUNNER_TEMP/refresh-pr.md"

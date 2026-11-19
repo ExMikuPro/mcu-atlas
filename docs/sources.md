@@ -35,3 +35,9 @@ A source row must identify Microchip silicon, the exact `part_number`, the expec
 | [DS40001882, SAM D21/DA1](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf) | The API supplies a version-neutral URL. The indexed revision field is absent. |
 
 The five JSON fixtures retain the pagination envelope and seven relevant fields from actual API responses. Full vendor responses, inventory data and PDF binaries are outside the repository. The accepted snapshot retains only the scoped parts and official link evidence.
+
+### Microchip refresh and access
+
+The collector uses the request method and route advertised by the [Product Data API guide](https://www.microchip.com/designresources/PartnerDataExchange/ProductAPI-user-guide.html). Live requests are limited to this exact API with documented query parameters, identifying User-Agent, sequential requests at least two seconds apart, request timeouts, and one retry for transient errors. API denials and rate limits stop the run. The transport evaluates [robots.txt](https://www.microchip.com/robots.txt) when available. That published policy did not disallow the endpoint when reviewed. Some networks return HTTP 403 on robots.txt itself. In that case the transport treats the policy file as unavailable under [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1.3) and limits requests to the documented API route. There is no HTML crawling or automated PDF fetching.
+
+Changed URL or revision evidence appears in the refresh report. Edition changes behind an unchanged, version-neutral URL require manual review. A missing row, invalid URL, conflicting edition, incomplete page, or failed request prevents snapshot replacement. Refresh tests cover failures after successful earlier pages and verify that the saved bytes are preserved.

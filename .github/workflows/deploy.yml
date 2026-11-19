@@ -1,4 +1,4 @@
-name: Deploy preview Worker
+name: Deploy v0.2 preview Worker
 on:
   workflow_dispatch:
 
@@ -6,12 +6,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: mcu-atlas-preview-deploy
+  group: mcu-atlas-v02-preview-deploy
   cancel-in-progress: false
 
 jobs:
   preview:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/v02/automated-refresh'
     runs-on: ubuntu-latest
     environment: preview
     steps:
@@ -27,7 +27,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
-      - name: Deploy mcu-atlas-v01-preview
+      - name: Deploy mcu-atlas-v02-preview
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
