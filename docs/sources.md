@@ -7,7 +7,7 @@
 | [ST STM32F407VE](https://www.st.com/en/microcontrollers-microprocessors/stm32f407ve.html), [STM32F407VG](https://www.st.com/en/microcontrollers-microprocessors/stm32f407vg.html), [STM32F103C8](https://www.st.com/en/microcontrollers-microprocessors/stm32f103c8.html) | Product tables identify exact order codes. The official eStore product listing has stable, separate rows in the observed captures, with an explicit datasheet link per SKU. Captures confirmed VET6, VET6TR, VGT6 and C8T6 on the intended base devices. |
 | [ST STM32F407/417 documentation](https://www.st.com/en/microcontrollers-microprocessors/stm32f407-417/documentation.html) and [STM32F103 documentation](https://www.st.com/en/microcontrollers-microprocessors/stm32f103/documentation.html) | The catalogs include documents for multiple subfamilies. F407 VE and VG share DS8626 rev 12, ES0182 rev 19 and RM0090 rev 22. F103 C8 is in the x8 medium-density group covered by DS5319 rev 20, ES096 rev 15 and RM0008 rev 21. Those files have separate device-level associations in the catalog, and their source coverage is recorded as subfamily. |
 | [ST open pin data](https://github.com/STMicroelectronics/STM32_open_pin_data) | Official machine-readable pin data, for example `STM32F407V(E-G)Tx.xml`, uses part patterns. It does not establish the exact commercial suffix, document set or revision metadata needed here. |
-| [Microchip Product Data API](https://www.microchip.com/designresources/PartnerDataExchange/ProductAPI-user-guide.html) | A public `part=pic10f202` probe returned HTTP 200 with multiple orderable parts, base part fields and datasheet URLs. This API is a candidate for v0.2. |
+| [Microchip Product Data API](https://www.microchip.com/designresources/PartnerDataExchange/ProductAPI-user-guide.html) | The public API returns partial matches and paginated lists. The v0.2 collector imports only configured, exact silicon ordering codes with matching base-device and document evidence. |
 
 ## Access and review
 
@@ -21,6 +21,17 @@ To update ST evidence, review each product listing and document through an allow
 
 `data/fixtures/keil-index.pidx` contains the two Keil index rows. `keil-f1.pdsc` and `keil-f4.pdsc` retain the relevant release, device levels and book records from the official descriptors. The F4 descriptor is published by [Open-CMSIS-Pack](https://github.com/Open-CMSIS-Pack/STM32F4xx_DFP). `st-store-*.html` retains minimal row structure, observed part numbers and official link attributes from the eStore URLs declared in `collector/scope.ts`. The test suite runs offline.
 
-## Microchip onboarding
+## Microchip Product Data API
 
-Confirm supported access, limits and pagination with Microchip. Capture minimal fixtures for exact and partial lookups, for different orderable suffixes and for empty or malformed responses. Validate exact identity using the full returned part number, and independently establish model-to-document applicability and revision information from publisher evidence. Include tests for conflicting SKU mappings, repeated pages, duplicate documents and missing URLs before registering this adapter for refresh or including its output in the public dataset.
+The [official API guide](https://www.microchip.com/designresources/PartnerDataExchange/ProductAPI-user-guide.html) documents `part`, `pagesize` and `pagenumber`. The collector requests 20 rows per page and verifies the reported page number, size, total, expected row count and absence of repeated order codes. The recorded probes yielded 15 rows for PIC16F18313, 32 for ATMEGA328P and 21 for ATSAMD21G18A. The 12 shipped codes are an explicitly scoped sample of these results. The AVR response also contained neighboring ATMEGA328PB and development-board records. The SAM response used `ATSAMD21G18` as the `base_part_number` for the selected `ATSAMD21G18A-*` order codes.
+
+A source row must identify Microchip silicon, the exact `part_number`, the expected `base_part_number` and an official `product_url` for that code. Primary documents use the `datasheet_url` field. Secondary sheets use `secondary_datasheet_url` only when their scope has been confirmed. The AVR API includes the automotive sheet even for standard order codes. The catalog associates it with the two selected automotive codes only. Scope is stored per orderable part, and a document identity is deduplicated across parts.
+
+| Shipped Microchip document | Revision evidence |
+| --- | --- |
+| [DS40001799, PIC16F18313](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf) | Revision F appears in the publisher filename and page identification. |
+| [DS40002061, ATmega328P](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf) | Revision B appears in the publisher filename and page identification. |
+| [7810, ATmega328P Automotive](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf) | The publisher cover identifies 7810D and the automotive scope. |
+| [DS40001882, SAM D21/DA1](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf) | The API supplies a version-neutral URL. The indexed revision field is absent. |
+
+The five JSON fixtures retain the pagination envelope and seven relevant fields from actual API responses. Full vendor responses, inventory data and PDF binaries are outside the repository. The accepted snapshot retains only the scoped parts and official link evidence.

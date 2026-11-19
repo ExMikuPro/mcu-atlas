@@ -1,0 +1,188 @@
+{
+  "totalRecords": 21,
+  "pagenumber": 1,
+  "pagesize": 20,
+  "totalPages": 2,
+  "data": [
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AF",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AF",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AFT",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AFT",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AU",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AU-SLL",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AU-SLL",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AUT",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AUT",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AZ",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AZ",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AZ510",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AZ510",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AZT",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AZT",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-AZT510",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-AZT510",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MF",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MF",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MFT",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MFT",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MU",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MU-SLL",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MU-SLL",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MUT",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MUT",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MZ",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MZ",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MZ510",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MZ510",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MZT",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MZT",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MZT510",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MZT510",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MZTVAO",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MZTVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATSAMD21G18A-MZVAO",
+      "base_part_number": "ATSAMD21G18",
+      "product_url": "https://www.microchipdirect.com/product/ATSAMD21G18A-MZVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    }
+  ]
+}

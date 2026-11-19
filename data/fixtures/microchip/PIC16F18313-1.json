@@ -1,0 +1,143 @@
+{
+  "totalRecords": 15,
+  "pagenumber": 1,
+  "pagesize": 20,
+  "totalPages": 1,
+  "data": [
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-E/P",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-E/P",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-E/RF",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-E/RF",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-E/RFVAO",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-E/RFVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-E/SN",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-E/SN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-E/SNVAO",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-E/SNVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-I/P",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-I/P",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-I/RF",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-I/RF",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-I/SN",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-I/SN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313-I/SNVAO",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313-I/SNVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313T-E/RFVAO",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313T-E/RFVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313T-E/SN",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313T-E/SN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313T-E/SNVAO",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313T-E/SNVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313T-I/RF",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313T-I/RF",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313T-I/SN",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313T-I/SN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "PIC16F18313T-I/SNVAO",
+      "base_part_number": "PIC16F18313",
+      "product_url": "https://www.microchipdirect.com/product/PIC16F18313T-I/SNVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf",
+      "secondary_datasheet_url": "",
+      "component_type": "SILICON"
+    }
+  ]
+}

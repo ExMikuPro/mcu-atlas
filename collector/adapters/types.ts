@@ -1,5 +1,6 @@
+import type { z } from 'zod';
 import type { Source } from '../../schemas/device';
-import type { Document, DocumentRevision } from '../../schemas/document';
+import type { Document, DocumentRevision, documentScope } from '../../schemas/document';
 
 export type ReadSource = (url: string) => Promise<string>;
 
@@ -16,7 +17,7 @@ export interface DocumentFinding extends DocumentRevision {
   type?: Document['type'];
   title: string;
   reference?: string;
-  scope: 'family' | 'subFamily' | 'device' | 'variant';
+  scope: z.infer<typeof documentScope>;
   source: Source;
   verified: boolean;
 }

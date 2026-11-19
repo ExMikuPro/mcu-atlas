@@ -3,10 +3,10 @@ import { cmsisAdapter } from './adapters/cmsis';
 import { sourceReader } from './fetch';
 import { buildCatalog } from './catalog';
 import { snapshotSchema } from './snapshot';
-import { readStInputs, snapshotPath } from '../scripts/inputs';
+import { readMicrochipInput, readStInputs, snapshotPath } from '../scripts/inputs';
 import { json, writeAtomic } from '../scripts/io';
 
-const st = await readStInputs();
+const [st, microchip] = await Promise.all([readStInputs(), readMicrochipInput()]);
 const previousText = await readFile(snapshotPath, 'utf8').catch((error: NodeJS.ErrnoException) => {
   if (error.code !== 'ENOENT') throw error;
   return undefined;
@@ -16,7 +16,7 @@ const collected = await cmsisAdapter.collect(sourceReader(), new Date().toISOStr
 const changed = json(collected.packs) !== json(previous?.cmsis.packs);
 const cmsis = changed || !previous ? collected : previous.cmsis;
 const snapshot = snapshotSchema.parse({ cmsis });
-const catalog = buildCatalog({ ...snapshot, ...st });
+const catalog = buildCatalog({ ...snapshot, ...st, microchip });
 
 // Only replace the known-good snapshot after every source, relationship and schema is checked.
 if (changed || !previous) await writeAtomic(snapshotPath, json(snapshot));

@@ -1,9 +1,11 @@
+import { normalizeMicrochip } from './adapters/microchip';
+import type { MicrochipEvidence } from './adapters/microchip';
 import { normalizeSt } from './adapters/st-catalog';
 import type { StInputs } from './adapters/st-catalog';
 import { normalizeCatalog } from './normalize';
 import type { Catalog } from './normalize';
 
-export type Inputs = StInputs;
+export type Inputs = StInputs & { microchip: MicrochipEvidence };
 
 type RegisteredVendor = {
   id: string;
@@ -12,6 +14,7 @@ type RegisteredVendor = {
 
 const vendors: readonly RegisteredVendor[] = [
   { id: 'st', catalog: normalizeSt },
+  { id: 'microchip', catalog: ({ microchip }) => normalizeMicrochip(microchip) },
 ];
 
 export function buildCatalog(inputs: Inputs): Catalog {

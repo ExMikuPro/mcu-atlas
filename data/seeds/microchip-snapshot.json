@@ -1,0 +1,81 @@
+{
+  "observedAt": "2026-11-19T09:46:15Z",
+  "parts": [
+    {
+      "model": "ATMEGA328P-15AZ",
+      "base": "ATMEGA328P",
+      "productUrl": "https://www.microchipdirect.com/product/ATMEGA328P-15AZ",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondaryDatasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf"
+    },
+    {
+      "model": "ATMEGA328P-15MZ",
+      "base": "ATMEGA328P",
+      "productUrl": "https://www.microchipdirect.com/product/ATMEGA328P-15MZ",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondaryDatasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf"
+    },
+    {
+      "model": "ATMEGA328P-AU",
+      "base": "ATMEGA328P",
+      "productUrl": "https://www.microchipdirect.com/product/ATMEGA328P-AU",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondaryDatasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf"
+    },
+    {
+      "model": "ATMEGA328P-AUR",
+      "base": "ATMEGA328P",
+      "productUrl": "https://www.microchipdirect.com/product/ATMEGA328P-AUR",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondaryDatasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf"
+    },
+    {
+      "model": "ATSAMD21G18A-AF",
+      "base": "ATSAMD21G18",
+      "productUrl": "https://www.microchipdirect.com/product/ATSAMD21G18A-AF",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf"
+    },
+    {
+      "model": "ATSAMD21G18A-AU",
+      "base": "ATSAMD21G18",
+      "productUrl": "https://www.microchipdirect.com/product/ATSAMD21G18A-AU",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf"
+    },
+    {
+      "model": "ATSAMD21G18A-AUT",
+      "base": "ATSAMD21G18",
+      "productUrl": "https://www.microchipdirect.com/product/ATSAMD21G18A-AUT",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf"
+    },
+    {
+      "model": "ATSAMD21G18A-UUT",
+      "base": "ATSAMD21G18",
+      "productUrl": "https://www.microchipdirect.com/product/ATSAMD21G18A-UUT",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf"
+    },
+    {
+      "model": "PIC16F18313-E/P",
+      "base": "PIC16F18313",
+      "productUrl": "https://www.microchipdirect.com/product/PIC16F18313-E/P",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf"
+    },
+    {
+      "model": "PIC16F18313-I/P",
+      "base": "PIC16F18313",
+      "productUrl": "https://www.microchipdirect.com/product/PIC16F18313-I/P",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf"
+    },
+    {
+      "model": "PIC16F18313-I/SN",
+      "base": "PIC16F18313",
+      "productUrl": "https://www.microchipdirect.com/product/PIC16F18313-I/SN",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf"
+    },
+    {
+      "model": "PIC16F18313T-I/SN",
+      "base": "PIC16F18313",
+      "productUrl": "https://www.microchipdirect.com/product/PIC16F18313T-I/SN",
+      "datasheetUrl": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001799F.pdf"
+    }
+  ]
+}
