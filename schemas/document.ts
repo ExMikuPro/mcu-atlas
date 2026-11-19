@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { label, publicUrl, slug, source } from './device';
+import { label, model, publicUrl, slug, source } from './device';
 
 export const documentId = z.string().regex(/^[A-Z0-9][A-Z0-9._-]{0,63}$/);
 export const documentType = z.enum(['datasheet', 'reference_manual', 'errata']);
@@ -22,6 +22,7 @@ export const document = z.strictObject({
 export const applicability = z.strictObject({
   deviceId: label,
   documentKey: label,
+  orderableModel: model.optional(),
   sourceScope: documentScope,
   verified: z.boolean(),
   source,

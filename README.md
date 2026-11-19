@@ -52,7 +52,7 @@ The **Refresh CMSIS data** workflow runs Mondays at 03:23 UTC and supports manua
 | --- | --- |
 | `catalog.json` | Normalized entities and evidence. The `applicability` relation records the device and document keys, scope, provenance and verification status. |
 | `manifest.json` | Schema version, SHA-256 data version, generation timestamp, counts and sorted exact model membership. |
-| `lookup/<lowercase-model>.json` | Data version and API payload for one orderable part. |
+| `lookup/<hex-encoded-model>.json` | Data version and API payload for one orderable part. |
 | `search/index.json` | Data version and sorted model summaries for offline substring search. |
 
 A document belongs to one manufacturer and can have many device associations. Revision metadata is a separate object on the canonical document. `verifiedAt` means the publisher's evidence was checked for applicability. `publishedAt` is optional and appears only when independently supported. The manifest generation timestamp is derived from the latest contributing source observation, so identical committed inputs generate byte-for-byte identical files.
@@ -67,7 +67,7 @@ curl -i 'http://localhost:8787/v1/search?q=STM32F407'
 curl -i 'http://localhost:8787/v1/status'
 ```
 
-- **Lookup** returns `success`, `model`, `manufacturer`, `family` and `documents`, plus the base `device` and ordering-code evidence. Matching trims surrounding whitespace, folds ASCII case and preserves suffixes such as `TR`.
+- **Lookup** returns `success`, `model`, `manufacturer`, `family` and `documents`, plus the base `device` and ordering-code evidence. Matching trims surrounding whitespace, folds ASCII case and preserves model punctuation and suffixes such as `TR`.
 - **Search** matches an ASCII substring, ranks exact and prefix matches first, and returns up to 25 results and the full match count.
 - **Status** reports the schema and dataset versions, timestamp and coverage counts.
 

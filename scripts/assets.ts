@@ -1,13 +1,14 @@
 import { createHash } from 'node:crypto';
 import { lookupAsset, manifest, searchIndex } from '../schemas/response';
-import { normalizeCatalog } from '../collector/normalize';
-import type { Inputs } from '../collector/normalize';
+import { buildCatalog } from '../collector/catalog';
+import type { Inputs } from '../collector/catalog';
+import { lookupAssetPath } from '../schemas/asset-key';
 import { json } from './io';
 
 export const outputDir = 'generated-assets';
 
 export function renderAssets(inputs: Inputs): Map<string, string> {
-  const catalog = normalizeCatalog(inputs);
+  const catalog = buildCatalog(inputs);
   const families = new Map(catalog.families.map((entry) => [entry.id, entry]));
   const manufacturers = new Map(catalog.manufacturers.map((entry) => [entry.id, entry]));
   const devices = new Map(catalog.devices.map((entry) => [entry.id, entry]));
@@ -20,11 +21,11 @@ export function renderAssets(inputs: Inputs): Map<string, string> {
     return { model: order.model, manufacturer: manufacturer.name, family: family.name, device: device.model };
   });
   const schemaVersion = 1;
-  const dataVersion = `sha256:${createHash('sha256').update(json({ schemaVersion, catalog })).digest('hex')}`;
+  const dataVersion = `sha256:${createHash('sha256').update(json({ schemaVersion, assetFormat: 2, catalog })).digest('hex')}`;
   const files = new Map<string, string>();
   for (const [index, entry] of entries.entries()) {
     const order = catalog.orders[index];
-    const documents = links.get(order.deviceId)!.map((link) => {
+    const documents = links.get(order.deviceId)!.filter((link) => !link.orderableModel || link.orderableModel === order.model).map((link) => {
       const document = docs.get(link.documentKey)!;
       return {
         id: document.id,
@@ -41,13 +42,17 @@ export function renderAssets(inputs: Inputs): Map<string, string> {
       dataVersion,
       response: { success: true, ...entry, documents, orderableSource: order.source },
     });
-    files.set(`v1/lookup/${entry.model.toLowerCase()}.json`, json(asset));
+    files.set(`v1/${lookupAssetPath(entry.model)}`, json(asset));
   }
   const info = manifest.parse({
     schemaVersion,
     dataVersion,
     // This is the time of the latest evidence that contributed to this reproducible snapshot.
-    generatedAt: new Date(Math.max(...[inputs.cmsis, inputs.st, inputs.editorial].map(({ observedAt }) => Date.parse(observedAt)))).toISOString(),
+    generatedAt: new Date([
+      ...catalog.devices.flatMap(({ sources }) => sources),
+      ...catalog.orders.map(({ source }) => source),
+      ...catalog.applicability.map(({ source }) => source),
+    ].reduce((latest, { observedAt }) => Math.max(latest, Date.parse(observedAt)), 0)).toISOString(),
     models: entries.map((entry) => entry.model),
     counts: {
       models: catalog.orders.length,
