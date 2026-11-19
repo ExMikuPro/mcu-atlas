@@ -5,7 +5,7 @@ import { parseStStore } from './adapters/st';
 import { buildCatalog } from './catalog';
 import { stScope } from './scope';
 import { snapshotSchema, editorialEvidence, stEvidence } from './snapshot';
-import { snapshotPath, stDocumentsPath, stProductsPath } from '../scripts/inputs';
+import { readMicrochipInput, snapshotPath, stDocumentsPath, stProductsPath } from '../scripts/inputs';
 import { json, readJson, writeAtomic } from '../scripts/io';
 
 const [directory, timestamp, ...extra] = process.argv.slice(2);
@@ -15,14 +15,15 @@ if (!directory || !timestamp || extra.length) {
 const observedAt = z.iso.datetime().parse(timestamp);
 if (Date.parse(observedAt) > Date.now()) throw new Error('Evidence time cannot be in the future');
 
-const [snapshot, input, products] = await Promise.all([
+const [snapshot, input, microchip, products] = await Promise.all([
   readJson(snapshotPath).then((value) => snapshotSchema.parse(value)),
   readJson(stDocumentsPath).then((value) => editorialEvidence.parse(value)),
+  readMicrochipInput(),
   Promise.all(stScope.map(async (entry) => parseStStore(
     await readFile(join(directory, `st-store-${entry.model.toLowerCase()}.html`), 'utf8'), entry,
   ))),
 ]);
 const st = stEvidence.parse({ observedAt, products });
-buildCatalog({ ...snapshot, st, editorial: input });
+buildCatalog({ ...snapshot, st, editorial: input, microchip });
 await writeAtomic(stProductsPath, json(st));
 console.log(`Imported ${st.products.length} reviewed ST product listings.`);

@@ -1,0 +1,116 @@
+{
+  "totalRecords": 32,
+  "pagenumber": 2,
+  "pagesize": 20,
+  "totalPages": 2,
+  "data": [
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-AU",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-AU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-AUES",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-AUES",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-AUR",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-AUR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-AURVAO",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-AURVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-AUVAO",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-AUVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-MBTVAO",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-MBTVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-MN",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-MN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-MNR",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-MNR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-MU",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-MU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-MUES",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-MUES",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-MUR",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-MUR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-XMINI",
+      "base_part_number": "Other",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-XMINI",
+      "datasheet_url": "Not Available",
+      "secondary_datasheet_url": "",
+      "component_type": "DEVSYSTEM"
+    }
+  ]
+}

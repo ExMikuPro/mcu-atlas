@@ -1,0 +1,188 @@
+{
+  "totalRecords": 32,
+  "pagenumber": 1,
+  "pagesize": 20,
+  "totalPages": 2,
+  "data": [
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-15AZ",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-15AZ",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-15MZ",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-15MZ",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-AN",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-AN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-ANR",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-ANR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-AU",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-AU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-AUR",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-AUR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-MMH",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-MMH",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-MMHR",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-MMHR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-MN",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-MN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-MNR",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-MNR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-MU",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-MU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-MUR",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-MUR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-PN",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-PN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-PU",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-PU",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-W",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-W",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-W-NG",
+      "base_part_number": "ATmega328P",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-W-NG",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328P-XMINI",
+      "base_part_number": "Other",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328P-XMINI",
+      "datasheet_url": "Not Available",
+      "secondary_datasheet_url": "",
+      "component_type": "DEVSYSTEM"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-ABTVAO",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-ABTVAO",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-AN",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-AN",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    },
+    {
+      "manufacturer": "Microchip Technology Inc.",
+      "part_number": "ATMEGA328PB-ANR",
+      "base_part_number": "ATmega328PB",
+      "product_url": "https://www.microchipdirect.com/product/ATMEGA328PB-ANR",
+      "datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/40001906C.pdf",
+      "secondary_datasheet_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega328PB-Automotive-Data-Sheet-40001980B.pdf",
+      "component_type": "SILICON"
+    }
+  ]
+}

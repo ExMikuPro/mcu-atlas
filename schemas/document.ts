@@ -3,7 +3,7 @@ import { label, model, publicUrl, slug, source } from './device';
 
 export const documentId = z.string().regex(/^[A-Z0-9][A-Z0-9._-]{0,63}$/);
 export const documentType = z.enum(['datasheet', 'reference_manual', 'errata']);
-export const documentScope = z.enum(['family', 'subFamily', 'device', 'variant']);
+export const documentScope = z.enum(['family', 'subFamily', 'device', 'variant', 'orderablePart']);
 export const documentRevision = z.strictObject({
   revision: label.optional(),
   url: publicUrl.optional(),

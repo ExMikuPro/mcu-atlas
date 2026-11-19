@@ -2,7 +2,7 @@
 
 MCU Atlas is an open-source, serverless index of official microcontroller documentation. It exposes a JSON API for looking up an exact orderable part and finding the datasheet, reference manual and errata that apply to it.
 
-## v0.1 coverage
+## v0.2 coverage
 
 | Manufacturer | Base device | Exact orderable parts |
 | --- | --- | --- |
@@ -10,7 +10,11 @@ MCU Atlas is an open-source, serverless index of official microcontroller docume
 | STMicroelectronics | STM32F407VG | STM32F407VGT6 |
 | STMicroelectronics | STM32F103C8 | STM32F103C8T6 |
 
-The release indexes six unique manufacturer documents. Keil CMSIS-Pack discovery and PDSC parsing run automatically. Exact ST ordering codes and ST document revisions have manually reviewed manufacturer evidence. Microchip has a declared adapter contract and an evaluated candidate API. Its records are outside the v0.1 dataset. See [source research and coverage](docs/sources.md).
+| Microchip Technology | PIC16F18313 | PIC16F18313-E/P, PIC16F18313-I/P, PIC16F18313-I/SN, PIC16F18313T-I/SN |
+| Microchip Technology | ATMEGA328P | ATMEGA328P-15AZ, ATMEGA328P-15MZ, ATMEGA328P-AU, ATMEGA328P-AUR |
+| Microchip Technology | ATSAMD21G18 | ATSAMD21G18A-AF, ATSAMD21G18A-AU, ATSAMD21G18A-AUT, ATSAMD21G18A-UUT |
+
+The catalog indexes ten unique manufacturer documents and sixteen verified ordering codes. Keil CMSIS-Pack discovery and PDSC parsing run automatically. ST ordering codes and document revisions have manually reviewed manufacturer evidence. Microchip ordering codes and datasheet links come from its official Product Data API. See [source research and coverage](docs/sources.md).
 
 ## Architecture
 
@@ -63,6 +67,7 @@ The Workers Free limit is 20,000 assets per Worker version and 25 MiB per asset.
 
 ```sh
 curl -i 'http://localhost:8787/v1/lookup?model=STM32F407VET6'
+curl -i -G --data-urlencode 'model=PIC16F18313-I/SN' 'http://localhost:8787/v1/lookup'
 curl -i 'http://localhost:8787/v1/search?q=STM32F407'
 curl -i 'http://localhost:8787/v1/status'
 ```

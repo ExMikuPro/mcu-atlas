@@ -4,6 +4,8 @@ import { lookupAssetPath } from '../schemas/asset-key';
 import { modelQuery, publicUrl } from '../schemas/device';
 import { cmsisAdapter, createCmsisAdapter, packFromIndex, parsePdsc } from '../collector/adapters/cmsis';
 import { createStAdapter, parseStStore } from '../collector/adapters/st';
+import { normalizeSt } from '../collector/adapters/st-catalog';
+import { normalizeCatalog } from '../collector/normalize';
 import { buildCatalog } from '../collector/catalog';
 import { cmsisIndexUrl, stScope } from '../collector/scope';
 import { renderAssets } from '../scripts/assets';
@@ -93,7 +95,7 @@ describe('ST Adapter', () => {
 describe('Normalized catalog and static rendering', () => {
   it('deduplicates documents across base devices without dropping scoped applicability', async () => {
     const input = await readInputs();
-    const catalog = buildCatalog(input);
+    const catalog = normalizeCatalog([normalizeSt(input)]);
     expect(catalog.devices).toHaveLength(3);
     expect(catalog.orders).toHaveLength(4);
     expect(catalog.documents).toHaveLength(6);
