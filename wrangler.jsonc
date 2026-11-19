@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "mcu-atlas-v01-preview",
+  "name": "mcu-atlas-v02-preview",
   "main": "./src/index.ts",
   "compatibility_date": "2026-08-20",
   "assets": {

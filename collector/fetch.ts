@@ -2,12 +2,15 @@ import { setTimeout as delay } from 'node:timers/promises';
 import robotsParser from 'robots-parser';
 import type { ReadSource } from './adapters/types';
 
-const userAgent = 'MCU-Atlas/0.1 (+https://github.com/ExMikuPro/mcu-atlas)';
-const allowedHosts = new Set([
+const userAgent = 'MCU-Atlas/0.2 (+https://github.com/ExMikuPro/mcu-atlas)';
+const cmsisHosts = new Set([
   'www.keil.com',
   'sadevicepacksdqaus.blob.core.windows.net',
   'sadevicepacksprodus.blob.core.windows.net',
 ]);
+const microchipHost = 'www.microchip.com';
+const microchipPath = '/designresources/product-catalog/api/productInfo';
+type SourceProfile = 'cmsis' | 'microchip';
 const maxBytes = 4 * 1024 * 1024;
 
 class SourceHttpError extends Error {
@@ -16,10 +19,14 @@ class SourceHttpError extends Error {
   }
 }
 
-function assertAllowedUrl(url: URL) {
-  if (url.protocol !== 'https:' || !allowedHosts.has(url.hostname) ||
-      url.username || url.password || url.port || url.search || url.hash) {
-    throw new Error(`Unexpected upstream URL host or credentials: ${url.hostname}`);
+function assertAllowedUrl(url: URL, profile: SourceProfile) {
+  const query = url.searchParams;
+  const microchipEndpoint = url.hostname === microchipHost && url.pathname === microchipPath &&
+    query.size === 3 && /^[A-Z0-9._/-]{3,64}$/i.test(query.get('part') ?? '') &&
+    query.get('pagesize') === '20' && /^(?:[1-9]|10)$/.test(query.get('pagenumber') ?? '');
+  const allowed = profile === 'cmsis' ? cmsisHosts.has(url.hostname) && !url.search : microchipEndpoint;
+  if (url.protocol !== 'https:' || !allowed || url.username || url.password || url.port || url.hash) {
+    throw new Error(`Unexpected upstream URL host, path, or credentials: ${url.hostname}`);
   }
 }
 
@@ -41,19 +48,21 @@ async function bodyText(response: Response, url: URL) {
   }
 }
 
-export function sourceReader(request: typeof fetch = fetch): ReadSource {
+export function sourceReader(request: typeof fetch = fetch, profile: SourceProfile = 'cmsis'): ReadSource {
   const requests = new Map<string, Promise<string>>();
   const robots = new Map<string, ReturnType<typeof robotsParser>>();
   let queue: Promise<unknown> = Promise.resolve();
   let nextRequestAt = 0;
 
-  async function send(url: URL, crawlDelay = 1) {
+  const minSpacing = profile === 'microchip' ? 2 : 1;
+
+  async function send(url: URL, crawlDelay = minSpacing) {
     await delay(Math.max(0, nextRequestAt - Date.now()));
-    nextRequestAt = Date.now() + Math.max(1, crawlDelay) * 1000;
+    nextRequestAt = Date.now() + Math.max(minSpacing, crawlDelay) * 1000;
     return request(url, {
       signal: AbortSignal.timeout(20_000),
       redirect: 'manual',
-      headers: { 'User-Agent': userAgent },
+      headers: { 'User-Agent': userAgent, ...(profile === 'microchip' ? { Accept: 'application/json, text/plain' } : {}) },
     });
   }
 
@@ -68,7 +77,13 @@ export function sourceReader(request: typeof fetch = fetch): ReadSource {
       await response.body?.cancel();
       // Azure Blob rejects a root-level path with 400 because it expects a container.
       const azureMissing = response.status === 400 && location.hostname.endsWith('.blob.core.windows.net');
-      if (![404, 410].includes(response.status) && !azureMissing) throw new SourceHttpError(location, response.status);
+      // The publisher documents automated GETs to this exact API. A denial of robots.txt
+      // cannot authorize requests to any other path. A denial on the API itself always fails.
+      const documentedApi = profile === 'microchip' && response.status === 403;
+      if (documentedApi) console.warn('Microchip robots.txt unavailable (HTTP 403). Using the documented Product Data API only.');
+      if (![404, 410].includes(response.status) && !azureMissing && !documentedApi) {
+        throw new SourceHttpError(location, response.status);
+      }
     }
     const parsed = robotsParser(location.href, rules);
     robots.set(url.origin, parsed);
@@ -78,16 +93,16 @@ export function sourceReader(request: typeof fetch = fetch): ReadSource {
   async function fetchText(start: string) {
     let url = new URL(start);
     for (let redirects = 0; redirects <= 3; redirects++) {
-      assertAllowedUrl(url);
+      assertAllowedUrl(url, profile);
       const rules = await policy(url);
       if (rules.isAllowed(url.href, 'MCU-Atlas') === false) throw new Error(`${url.href}: disallowed by robots.txt`);
-      const crawlDelay = rules.getCrawlDelay('MCU-Atlas') ?? 1;
-      await delay(Math.max(0, (crawlDelay - 1) * 1000));
+      const crawlDelay = rules.getCrawlDelay('MCU-Atlas') ?? minSpacing;
+      await delay(Math.max(0, (crawlDelay - minSpacing) * 1000));
       const response = await send(url, crawlDelay);
       if (response.ok) return bodyText(response, url);
       await response.body?.cancel();
       const location = response.headers.get('location');
-      if (location && [301, 302, 303, 307, 308].includes(response.status)) {
+      if (profile === 'cmsis' && location && [301, 302, 303, 307, 308].includes(response.status)) {
         url = new URL(location, url);
         continue;
       }
